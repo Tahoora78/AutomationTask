@@ -35,7 +35,7 @@ like the previous part just type the username.
 # Developer guide
 - Provider.tf
 <br>
-We have Provider.tf file, you should type down youe access_key and secret_key there.
+We have Provider.tf file, you should type down your access_key and secret_key there.
 
 - main.tf
 <br>
