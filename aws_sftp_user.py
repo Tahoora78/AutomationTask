@@ -9,6 +9,7 @@ s3 = boto3.client('s3')
 # since we have only one server in ap-southeast-1 , change this accordingly
 serverId=client.list_servers().get('Servers')[0].get('ServerId')
 # serverEndPoint = "s-efec2545294c4e4aa.server.transfer.eu-west-1.amazonaws.com"
+print("The server id is:", serverId)
 bucket_name = "source-s3-bucket-sftp"
 
 @click.command()

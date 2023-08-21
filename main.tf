@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "source_bucket" {
 resource "aws_s3_bucket" "destination_bucket" {
     bucket = "destination-s3-bucket-sftp"
     tags = {
-    name        = "destination-s3-bucket-sftp"
+   parameters  name        = "destination-s3-bucket-sftp"
     environment = local.environment
     owner       = "tahooramajlesi@gmail.com",
     dataType    = "SFTP files"
