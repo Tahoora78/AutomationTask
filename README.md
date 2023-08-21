@@ -27,7 +27,7 @@ Just enter the username of the user.
 - delete a folder
 you can also delete the folder which the user has accesed by running delete_aws_sftp_folder.py.
 like the previous part just type the username.
-<br>
+
 # Developer guide
 <br>
 We have Provider.tf file, you should type down youe access_key and secret_key there.
