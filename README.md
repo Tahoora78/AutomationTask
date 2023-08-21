@@ -1,19 +1,17 @@
 # AutomationTask
-<br>
-# user-guide
+
+## User-guide
 <br>
 You can use any sftp client. Then you can login to the server with the parameter that admin has given to you. These parameters are:
 host, username and ssh-key
 
-<br>
-# admin guide
-<br>
+
+## admin guide
 - Create a server
 <br>
 You can create a server with the command:
-terraform init
-terraform apply --auto-aprove
-<br>
+`terraform init`
+`terraform apply --auto-aprove`
 - create a new user
 <br>
 You can create new user by running aws_sftp_user.py. You can run this script and then type the username that you want.
@@ -21,7 +19,7 @@ This script will give you the ssh-key, ssh-key.pub .
 You should give username, ssh-key and also the server endpoint to any user that you want.
 <br>
 You can find the server-endpoint from the SFTP server page. Just click on the server which the server Id is the one that you got when create a new user.
-<br>
+
 - delete a user
 You can delete a user by running delete_aws_sftp_user.py.
 Just enter the username of the user.
