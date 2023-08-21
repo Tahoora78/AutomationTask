@@ -22,7 +22,6 @@ You should give username, ssh-key and also the server endpoint to any user that 
 <br>
 You can find the server-endpoint from the SFTP server page. Just click on the server which the server Id is the one that you got when create a new user.
 
-
 - delete a user
 <br>
 You can delete a user by running delete_aws_sftp_user.py.
