@@ -13,6 +13,7 @@ You can use sftp-client or filezilla.
 You can create a server with the command:
 `terraform init`
 `terraform apply --auto-aprove`
+
 - create a new user
 <br>
 You can create new user by running aws_sftp_user.py. You can run this script and then type the username that you want.
