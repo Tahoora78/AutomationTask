@@ -3,8 +3,9 @@
 ## User-guide
 <br>
 You can use any sftp client. Then you can login to the server with the parameter that admin has given to you. These parameters are:
-host, username and ssh-key
-
+host, username and ssh-key.
+<br>
+You can use sftp-client or filezilla.
 
 ## admin guide
 - Create a server
@@ -19,6 +20,7 @@ This script will give you the ssh-key, ssh-key.pub .
 You should give username, ssh-key and also the server endpoint to any user that you want.
 <br>
 You can find the server-endpoint from the SFTP server page. Just click on the server which the server Id is the one that you got when create a new user.
+
 
 - delete a user
 <br>
