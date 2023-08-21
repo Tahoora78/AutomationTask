@@ -3,3 +3,5 @@
 lambda.zip
 .tfstate
 .tfstate.
+.terraform
+.terraform/
