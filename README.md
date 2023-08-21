@@ -28,13 +28,17 @@ You can delete a user by running delete_aws_sftp_user.py.
 Just enter the username of the user.
 
 - delete a folder
+<br>
 you can also delete the folder which the user has accesed by running delete_aws_sftp_folder.py.
 like the previous part just type the username.
 
 # Developer guide
 - Provider.tf
+<br>
 We have Provider.tf file, you should type down youe access_key and secret_key there.
+
 - main.tf
+<br>
 In the main.tf file we build the sftp server, lambda function and the iam roles and policy which is needed. 
 <br>
 All of the sftp server, s3 buckets, iam roles and policies are created with this file.
@@ -43,15 +47,19 @@ We only use 2 s3 bucket. Which are source_s3_bucket and destination_s3_bucket. W
 So the new user can only access this folder from the source_s3_bucket.
 
 - lambda/index.py
+<br>
 If the file that the user has uploaded is in YYYYMM.pdf format, it will be copied to the destination_s3_bucket. And if it didn't an alert would be send to the slack chanel. These to action is handled by the lambda function which is lambda/index.py 
 
 - aws_sftp_user.py
+<br>
 In this file an SFTP user would be created for the SFTP server. And also a folder with the username name would be created. The new user can only access this folder. 
 And a ssh-key file would be generated. So the user can access to her/his file by using the sftp client software. 
 You can find the host url by cisiting the SFTP server and find out the server endpoint.
 
 - delete_aws_sftp_folder.py
+<br>
 We have delete_aws_sftp_folder.py to delete the user folder from source_s3_bucket.
 
 - delete_aws_sftp_user.py
+<br>
 We also have delete_aws_sftp_user.py to delete user.
