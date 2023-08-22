@@ -9,7 +9,7 @@ s3 = boto3.client('s3')
 # since we have only one server in ap-southeast-1 , change this accordingly
 serverId=client.list_servers().get('Servers')[0].get('ServerId')
 # serverEndPoint = "s-efec2545294c4e4aa.server.transfer.eu-west-1.amazonaws.com"
-bucket_name = "source-s3-bucket-sftp"
+bucket_name = "destination-s3-bucket-sftp"
 
 @click.command()
 @click.option('--user','-u',prompt="user name",help="name of the user to create as sftp user")
@@ -36,43 +36,31 @@ def create_user(user):
         "Version": "2012-10-17",
         "Statement": [
             {
-                "Sid": "AllowListingOfUserFolder",
                 "Action": [
-                    "s3:ListBucket"
-                ],
-                "Effect": "Allow",
-                "Resource": [
-                    "arn:aws:s3:::${transfer:HomeBucket}"
-                ],
-                "Condition": {
-                    "StringLike": {
-                        "s3:prefix": [
-                            "${transfer:HomeFolder}/*",
-                            "${transfer:HomeFolder}"
-                        ]
-                    }
-                }
-            },
-            {
-                "Sid": "AWSTransferRequirements",
-                "Effect": "Allow",
-                "Action": [
-                    "s3:ListAllMyBuckets",
+                    "s3:ListBucket",
                     "s3:GetBucketLocation"
                 ],
-                "Resource": "*"
+                "Resource": [
+                    "arn:aws:s3:::destination-s3-bucket"
+                ],
+                "Effect": "Allow",
+                "Sid": "ReadWriteS3"
             },
             {
-                "Sid": "HomeDirObjectAccess",
-                "Effect": "Allow",
                 "Action": [
                     "s3:PutObject",
                     "s3:GetObject",
-                    "s3:DeleteObjectVersion",
                     "s3:DeleteObject",
-                    "s3:GetObjectVersion"
+                    "s3:DeleteObjectVersion",
+                    "s3:GetObjectVersion",
+                    "s3:GetObjectACL",
+                    "s3:PutObjectACL"
                 ],
-                "Resource": "arn:aws:s3:::${transfer:HomeDirectory}/*"
+                "Resource": [
+                    "arn:aws:s3:::destination-s3-bucket-sftp/*"
+                ],
+                "Effect": "Allow",
+                "Sid": ""
             }
         ]
     }'''
@@ -82,7 +70,7 @@ def create_user(user):
             'Value': f'{user}'
         },
         ]
-    home_dir= f'/source-s3-bucket-sftp/{user}'
+    home_dir= f'/destination-s3-bucket-sftp/*'
 
     client.create_user(
         HomeDirectory=home_dir,
@@ -95,6 +83,7 @@ def create_user(user):
     )
    
     s3.put_object(Bucket=bucket_name, Key=f'{user}/')
+
     
 
 if __name__ == '__main__':

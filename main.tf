@@ -23,7 +23,7 @@ resource "aws_s3_bucket" "source_bucket" {
 resource "aws_s3_bucket" "destination_bucket" {
     bucket = "destination-s3-bucket-sftp"
     tags = {
-   parameters  name        = "destination-s3-bucket-sftp"
+    name        = "destination-s3-bucket-sftp"
     environment = local.environment
     owner       = "tahooramajlesi@gmail.com",
     dataType    = "SFTP files"
@@ -96,7 +96,7 @@ resource "aws_iam_role_policy" "sftp_policy" {
             "s3:PutObjectACL"
           ],
           "Resource": [
-            "arn:aws:s3:::${local.sftp_bucket_name}/${local.sftp_user}/*"
+            "arn:aws:s3:::${local.sftp_bucket_name}/*"
         ]
       }
     ]
