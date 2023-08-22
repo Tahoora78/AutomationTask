@@ -63,3 +63,6 @@ We have delete_aws_sftp_folder.py to delete the user folder from source_s3_bucke
 - delete_aws_sftp_user.py
 <br>
 We also have delete_aws_sftp_user.py to delete user.
+
+- aws_sftp_admin.py
+you can create admin user with it
