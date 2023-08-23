@@ -1,18 +1,18 @@
 - Provider.tf
 <br>
-We have Provider.tf file, you should type down your access_key and secret_key there.
+We have <a href="https://github.com/Tahoora78/AutomationTask/blob/main/Provider.tf">Provider.tf</a> file, you should type down your access_key and secret_key there.
 
 - main.tf
 <br>
-In the main.tf file we build the sftp server, lambda function and the iam roles and policy which is needed. 
+In the <a href="https://github.com/Tahoora78/AutomationTask/blob/main/main.tf">main.tf </a> file we build the sftp server, lambda function and the iam roles and policy which is needed. 
 <br>
 All of the sftp server, s3 buckets, iam roles and policies are created with this file.
 <br>
-We exclusively employ two S3 buckets: "source_s3_bucket" and "destination_s3_bucket." When an administrator creates a new user through the "aws_sftp_user.py" script, a folder bearing the username is automatically generated. Consequently, the new user is limited to accessing only this folder within the "source_s3_bucket."
+We exclusively employ two S3 buckets: "source_s3_bucket" and "destination_s3_bucket." When an administrator creates a new user through the <a href="https://github.com/Tahoora78/AutomationTask/blob/main/aws_sftp_user.py">aws_sftp_user.py </a> script, a folder bearing the username is automatically generated. Consequently, the new user is limited to accessing only this folder within the "source_s3_bucket."
 
 - lambda/index.py
 <br>
-Files uploaded by the user in the "YYYYMM.pdf" format will be transferred to the "destination_s3_bucket." In the event that the file does not adhere to this format, an alert will be dispatched to the designated Slack channel. These actions are managed by the Lambda function located at "lambda/index.py."
+Files uploaded by the user in the "YYYYMM.pdf" format will be transferred to the "destination_s3_bucket." In the event that the file does not adhere to this format, an alert will be dispatched to the designated Slack channel. These actions are managed by the Lambda function located at <a href ="https://github.com/Tahoora78/AutomationTask/blob/main/lambda/index.py">lambda/index.py</a>.
 
 - aws_sftp_user.py
 <br>
@@ -29,11 +29,11 @@ This file serves to accomplish several key tasks:
 <br>
 - delete_aws_sftp_folder.py
 <br>
-We have delete_aws_sftp_folder.py to delete the user folder from source_s3_bucket.
+We have <a href="https://github.com/Tahoora78/AutomationTask/blob/main/delete_aws_sftp_folder.py">delete_aws_sftp_folder.py </a> to delete the user folder from source_s3_bucket.
 
 - delete_aws_sftp_user.py
 <br>
-We also have delete_aws_sftp_user.py to delete user.
+We also have <a href="https://github.com/Tahoora78/AutomationTask/blob/main/delete_aws_sftp_user.py">delete_aws_sftp_user.py </a> to delete user.
 
 - aws_sftp_admin.py
 you can create admin user with it
