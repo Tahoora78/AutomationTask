@@ -8,7 +8,7 @@ You can create a server with the command:
 
 - create a new user
 <br>
-To create a new user, utilize the "aws_sftp_user.py" script. Simply execute the script and input the desired username. This script will provide you with both the SSH key and its public counterpart.
+To create a new user, utilize the [aws_sftp_user.py](https://github.com/Tahoora78/AutomationTask/blob/main/aws_sftp_user.py)  script. Simply execute the script and input the desired username. This script will provide you with both the SSH key and its public counterpart.
 <br>
 When assigning access to a user, ensure you provide them with the username, SSH key, as well as the server endpoint.
 <br>
