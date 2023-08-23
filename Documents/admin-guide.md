@@ -16,13 +16,13 @@ You can locate the server endpoint on the SFTP server page. Simply click on the 
 
 - delete a user
 <br>
-You can remove a user by executing the "delete_aws_sftp_user.py" script. Simply provide the username of the user you wish to delete.
+You can remove a user by executing the <a href = "https://github.com/Tahoora78/AutomationTask/blob/main/delete_aws_sftp_user.py">delete_aws_sftp_user.py</a> script. Simply provide the username of the user you wish to delete.
 
 - delete a folder
 <br>
-You can also delete the folder that the user has accessed by executing the "delete_aws_sftp_folder.py" script. Similar to the previous step, you only need to input the username.
+You can also delete the folder that the user has accessed by executing the <a href="https://github.com/Tahoora78/AutomationTask/blob/main/delete_aws_sftp_folder.py">delete_aws_sftp_folder.py</a> script. Similar to the previous step, you only need to input the username.
 
 - Create an admin user
 <br>
-you can create an admin user by running aws_sftp_admin.py
+you can create an admin user by running <a href="https://github.com/Tahoora78/AutomationTask/blob/main/aws_sftp_admin.py">aws_sftp_admin</a>.py
 
