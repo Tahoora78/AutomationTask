@@ -1,4 +1,4 @@
-# AutomationTask
+# Automation Book Keeping
 This is an automation program which simplify bookkeeping of uploading mounthly invoices thrrough SFTP protocol.
 <br>
 So we have 2 s3 bucket. The source-s3-bucket is where every employee has a folder there and has only the access to this folder.
